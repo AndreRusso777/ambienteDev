@@ -1,0 +1,86 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  @apply scroll-smooth;
+}
+
+details summary::-webkit-details-marker {
+  @apply hidden;
+}
+
+/* Estilos personalizados para toasts */
+.toast-document-request {
+  @apply bg-blue-50 border-l-4 border-blue-500 text-blue-800;
+}
+
+.toast-payment {
+  @apply bg-green-50 border-l-4 border-green-500 text-green-800;
+}
+
+.toast-user-registration {
+  @apply bg-purple-50 border-l-4 border-purple-500 text-purple-800;
+}
+
+.toast-default {
+  @apply bg-gray-50 border-l-4 border-gray-500 text-gray-800;
+}
+
+/* Customizações do react-toastify */
+.Toastify__toast {
+  @apply rounded-lg shadow-lg;
+  min-width: 320px;
+  max-width: 400px;
+  padding: 0 !important;
+}
+
+.Toastify__toast-body {
+  @apply p-0;
+  padding: 0 !important;
+}
+
+/* Posicionamento responsivo do ToastContainer */
+.Toastify__toast-container {
+  /* Desktop - 80px do topo */
+  @apply md:top-[80px];
+  /* Mobile - 60px do topo */
+  @apply top-[60px];
+  width: auto;
+}
+
+/* Garantir que toasts superiores respeitem o offset */
+.Toastify__toast-container--top-right,
+.Toastify__toast-container--top-left,
+.Toastify__toast-container--top-center {
+  /* Desktop - 100px do topo */
+  @apply md:top-[100px];
+  /* Mobile - 60px do topo */
+  @apply top-[60px];
+}
+
+/* Manter posicionamento padrão para toasts inferiores */
+.Toastify__toast-container--bottom-right,
+.Toastify__toast-container--bottom-left,
+.Toastify__toast-container--bottom-center {
+  @apply top-auto;
+}
+
+/* Estilos para o conteúdo personalizado do toast */
+.toast-content {
+  @apply p-4;
+}
+
+/* Responsividade para toasts em mobile */
+@media (max-width: 768px) {
+  .Toastify__toast {
+    min-width: 280px;
+    max-width: calc(100vw - 32px);
+    margin: 0 16px;
+  }
+  
+  .Toastify__toast-container {
+    width: 100%;
+    padding: 0;
+  }
+}

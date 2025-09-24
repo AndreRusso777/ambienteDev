@@ -1,0 +1,1 @@
+export const THREE_HOURS_IN_MS = 3 * 60 * 60 * 1000;
